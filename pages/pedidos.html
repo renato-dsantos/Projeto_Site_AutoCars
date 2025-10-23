@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anticars - Pedidos</title>
+    <link rel="stylesheet" href="../css/pedidos.css">
+</head>
+<body>
+
+     <header>
+        <a href="../index.html"><h1>AntiCars</h1></a>
+    <nav>  
+            <a class="idUsuario" href="../pages/usuario.html">usuario</a>
+            <a href="login.html">Login</a>
+            <a href="../pages/cadastro.html">Cadastro</a>
+            <a href="../pages/veiculos.html">Veículos</a>
+    </nav>
+</header>
+    <main>  
+   
+        <div class="pedido">  
+
+           <div class="tabela-container"> 
+                <Table>  
+                    
+                    <thead>
+                        <th>Código da reserva</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Excluir Reserva</th> 
+                       </thead> 
+                    <tbody>   
+                       <td>001</td>
+                       <td>Vosk</td>
+                       <td>Parati</td>
+                       <td><button class="btnExcluir" type="button" onclick="window.location.href='../index.html'" >Excluir</button> </td>                     
+                    </tbody>
+            </Table>          
+                    <div class="botoes-lado">
+                        <button class="btnReserva" type="submit">Finalizar reserva</button>
+                        <button class="btnSair" type="button" onclick="window.location.href='./veiculos.html'">Cancelar</button>
+                    </div>                   
+            </div>
+            
+            <div class="dadosPessoais">
+            <h2>Dados pessoais:</h2>
+
+                <p>Nome:</p>
+                <p>E-mail:</p>
+                <p>Telefone:</p>
+                <p>Endereço:</p>
+
+            </div>
+        </div> 
+
+        
+       
+    </main>
+    
+    
+</body>
+</html>
