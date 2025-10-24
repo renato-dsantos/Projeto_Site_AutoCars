@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anticars - Vendedor</title>
+    
+    <link rel="stylesheet" href="../css/adm.css">
+    
+</head>
+<body>
+     <header>
+        <a href="../index.html"><h1>AntiCars</h1></a>
+            <nav>  
+                    <a class="idUsuario" href="../pages/usuario.html">usuario</a>
+                    <a href="login.html">Login</a>
+                    <a href="../pages/cadastro.html">Cadastro</a>
+                    <a href="../pages/veiculos.html">Veículos</a>
+            </nav>
+        </header>
+    <main>
+        <div class="tab">
+        <button class="tablinks" onclick="openTabs(event, 'dadosCadastro')">Dados Cadastro</button>
+        <button class="tablinks" onclick="openTabs(event, 'carros')">Meus Carros</button>
+        <button class="tablinks" onclick="openTabs(event, 'novoCarros')">Cadastrar novo carro</button>
+        </div>
+
+                    <div id="dadosCadastro" class="tabcontent">
+                    <h3>Dados Cadastro</h3>                                       
+                
+                         
+                    </div>
+
+                    <div id="carros" class="tabcontent">
+                    <h3>Gerênciar carros</h3>
+                    
+                            <Table>  
+                                    
+                                    <thead>
+                                        <th>Código da reserva</th>
+                                        <th>Marca</th>
+                                        <th>Modelo</th>
+                                        <th>Gerenciar</th> 
+                                    </thead> 
+                                    <tbody>   
+                                    <td>001</td>
+                                    <td>Vosk</td>
+                                    <td>Parati</td>
+                                    <td>
+                                        <button class="btnEditar" id="btnEditarCarro"type="button">Editar</button>    
+                                        <button class="btnExcluir" id="btnExcluirCarro"type="button">Excluir</button>                                    
+                                    </td>                     
+                                    </tbody>
+                            </Table> 
+                    </div>
+
+                    <div id="novoCarros" class="tabcontent">
+                    <h3>Cadastrar novo carro</h3>
+                    <form action="" method="post">
+                       <p>Carro cadastro com sucesso!</p> 
+                        <label for="codigoVeiculo">Código do Veículo</label>
+                        <input type="number" name="codigoVeiculo" id="codigoVeiculo" required>
+                        <label for="slcMarca">Marca</label>
+                                <select id="slcMarca" name="slcMarca" required>
+                                    <option value="">Selecione uma marca</option>
+                                    <option value="ford">Ford </option>
+                                    <option value="chevrolet">Chevrolet</option>
+                                    <option value="dodge">Dodge</option>
+                                    <option value="buick">Buick</option>
+                                    <option value="cadillac">Cadillac</option>
+                                    <option value="studebaker">Studebaker</option>
+                                    <option value="packard">Packard</option>
+                                    <option value="oldsmobile">Oldsmobile</option>
+                                    <option value="pontiac">Pontiac</option>
+                                    <option value="plymouth">Plymouth</option>
+                                </select>
+                        <label for="slcModelo">Modelo</label>
+                                        <select id="modeloAntigo" name="modeloAntigo" required>
+                                            <option value="">Selecione um modelo</option>
+                                            <option value="ford-modelt">Ford Model</option>
+                                            <option value="chevrolet-belair">Chevrolet Bel Air</option>
+                                            <option value="dodge-charger">Dodge Charger</option>
+                                            <option value="buick-riviera">Buick Riviera</option>
+                                            <option value="cadillac-eldorado">Cadillac Eldorado</option>
+                                            <option value="studebaker-commander">Studebaker Commander</option>
+                                            <option value="packard-eight">Packard Eight</option>
+                                            <option value="oldsmobile-442">Oldsmobile 442</option>
+                                            <option value="pontiac-gto">Pontiac GTO</option>
+                                            <option value="plymouth-barracuda">Plymouth Barracuda</option>
+                                        </select>                      
+                        <label for="anoVeiculo">Ano</label> 
+                        <input type="number" name="anoVeiculo"  id="anoVeiculo" min="1900" max="2000" step="1" required>
+                        <label for="km">Km</label>
+                        <input type="number" name="km" id="km" required>
+                        <label for="foto">Fotos</label>
+                        <input type="file" name="foto" id="foto">
+                        <label for="txtDescricao">Descrição</label>
+                        <textarea type="text" name="txtDescricao" id="txtDescricao" required rows="10" cols="119" style="resize: none"></textarea>
+                        <!--<input type="text" name="txtDescricao" id="txtDescricao" required>-->
+                        
+                            <div class="botoes">
+                                <button type="submit" class="btnSalvar">Salvar</button>
+                                <a href="../pages/adm.html" class="btnCancelar">Cancelar</a>
+                            </div>
+                    </form>                    
+                    </div>
+
+
+    </main>
+
+<script src="../js/adm.js"></script>    
+</body>
+</html>

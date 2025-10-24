@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+body {
+  font-family: 'Racing Sans One', sans-serif;
+  background-color: #fff;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HEADER */
+header {
+ display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 20px 40px;
+  box-shadow: 0 2px 10px rgba(255, 102, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header h1 {
+  padding: 0px 3px;  
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #ff6600, #ff3300);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.2s;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+  color: #ff6600;
+  transform: translateY(-2px);
+}
+
+
+main {
+  flex: 1;
+  display: flex;
+  gap: 30px;
+  padding: 40px;
+  align-items: flex-start;
+}
+
+
+.tab {
+  flex: 1;
+  max-width: 280px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 102, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.tab button {
+ background-color: transparent;
+ font-family: 'Racing Sans One', sans-serif;
+  color: #fff;
+  border: none;
+  padding: 18px 20px;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  border-bottom: 1px solid #333;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.tab button:hover {
+  background-color: rgba(255, 102, 0, 0.1);
+  color: #ff6600;
+  transform: translateX(5px);
+}
+
+.tab button.active {
+ background-color: #ff6600;
+  color: #000;
+  font-weight: bold;
+}
+
+/* CONTEÚDO DAS TABS */
+.tabcontent {
+  flex: 3;
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.2);
+  display: none;
+  animation: fadeEffect 0.5s ease;
+}
+
+.tabcontent.active {
+  display: block;
+}
+
+@keyframes fadeEffect {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.tabcontent h3 {
+  margin-bottom: 20px;
+  color: #ff6600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /*Fica duas colunas*/
+  gap: 12px 20px;
+}
+
+form label {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 10px; /* aproxima o label do input */
+  display: block;  
+}
+
+form input,
+form select,
+form textarea {
+   background-color: #222;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 10px;
+  color: #fff;
+  outline: none;
+  font-family: 'Racing Sans One', sans-serif;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #ff6600;
+}
+
+form p {
+  grid-column: span 2;
+  color: red;
+  font-weight: bold;
+}
+
+/* BOTÕES */
+.botoes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  grid-column: span 2;
+  margin-top: 10px;
+}
+
+.btnSalvar,
+.btnCancelar {
+  display: inline-block;
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 25px;
+  font-family: 'Racing Sans One', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btnSalvar:hover,
+.btnCancelar:hover {
+  background-color: #ff3300;
+  transform: translateY(-2px);
+}
+
+/* Botão cancelar com tom cinza */
+.btnCancelar {
+  background-color: #555;
+}
+
+.btnCancelar:hover {
+  background-color: #777;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .tab {
+    width: 100%;
+  }
+
+  .tabcontent {
+    width: 100%;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .botoes {
+    flex-direction: column;
+  }
+}
+
+/**tabela de gerenciar carros*/
+
+.tabela-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+
+table {
+  width: 100%;
+  flex: 1;
+  border-collapse: collapse;
+  background-color: #111;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #333;
+  text-align: center;
+}
+
+th {
+  background-color: #222;
+  color: #ff6600;
+  text-transform: uppercase;
+}
+
+tr:hover {
+  background-color: #2a2a2a;
+}
+
+
+.btnExcluir,
+.btnEditar {
+  background-color: #ff3300;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 15px;
+  cursor: pointer;
+  font-family: 'Racing Sans One', sans-serif;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btnExcluir:hover {
+  background-color: #cc2900;
+  transform: scale(1.05);
+}

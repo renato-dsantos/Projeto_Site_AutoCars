@@ -21,6 +21,13 @@
     <form action="#"> 
         <div class="Cadastro">      
                     <h2>Dados pessoais</h2>
+                    <label for="tipoAcesso">Acesso</label>
+                    <select id="tipoAcesso" name="tipoAcesso" required>
+                                    <option value="">Selecione o tipo de acesso:</option>
+                                    <option value="Comprador">Comprador </option>
+                                    <option value="vendedor">vendedor </option>
+                     </select>
+
                     <label for="txtNome">Nome Completo</label>
                     <input id="txtNome" type="text"  required>
 
@@ -32,6 +39,9 @@
 
                     <label for="txtCPF">CPF</label>
                     <input id="txtCPF" type="text"  required>
+
+                    <label for="txtCNPJ">CNPJ</label>
+                    <input id="txtCNPJ" type="text"  required>
 
                     <h2>Endereço</h2>
 
