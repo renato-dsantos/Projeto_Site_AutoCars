@@ -92,6 +92,11 @@ section h1 {
 
 /*Layout dos carros em grid--teste*/
 
+.sctMarcas{
+  text-align: center;
+  
+}
+
 .sctPromDestaque{
   flex: 3;
   background-color: #1a1a1a;
@@ -229,11 +234,11 @@ section h1 {
       width: 100%;
       float: right;
       display: flex;
-      /*margin-left: 90px;
-      margin-top: 20px;*/
+      margin-left: 90px;
+      margin-top: 20px;
       border: 2px solid #ff6600;
       border-radius: 15px;
-    }
+  }
 
 
 /*Layout dos marcas em grid--teste*/
@@ -257,3 +262,62 @@ section h1 {
       height: 80px;
 
 }
+
+/**carrossel slide*/
+
+.carrossel h3 {
+  color: #444;
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.carrossel-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.carrossel-wrapper {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease;
+}
+
+.logo-item {
+  min-width: 160px;
+  height: 160px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-item img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.carrossel-indicadores {
+  margin-top: 15px;
+}
+
+.carrossel-indicadores span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 4px;
+  transition: background 0.3s;
+}
+
+.carrossel-indicadores .ativo {
+  background: #e91e63;
+}
+
+
