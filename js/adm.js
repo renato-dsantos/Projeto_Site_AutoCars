@@ -29,3 +29,34 @@ window.addEventListener("DOMContentLoaded", () => {
     firstTab.click(); // Simula o clique no primeiro botão
   }
 });
+
+
+//lista os usuários
+
+async function carregarUsuarios() {
+  const resposta = await fetch("https://seu-projeto.onrender.com/usuarios");
+  const usuarios = await resposta.json();
+
+  const tabela = document.getElementById("tabelaUsuarios").querySelector("tbody");
+
+  tabela.innerHTML = ""; // limpa a tabela antes de preencher
+
+  usuarios.forEach((user) => {
+    const tr = document.createElement("tr");
+
+    tr.innerHTML = `
+      <td>${user.id}</td>
+      <td>${user.nome}</td>
+      <td>${user.email}</td>
+      <td>${user.cpf}</td>
+      <td>
+        <button class="btnExcluir" data-id="${user.id}">Excluir</button>
+      </td>
+    `;
+
+    tabela.appendChild(tr);
+  });
+}
+
+// Chama a função ao carregar a página
+document.addEventListener("DOMContentLoaded", carregarUsuarios);
