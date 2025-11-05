@@ -46,6 +46,7 @@ async function carregarUsuarios() {
 
     tr.innerHTML = `
       <td>${user.id}</td>
+      <td>${user.tipoacesso}</td>
       <td>${user.nome}</td>
       <td>${user.email}</td>
       <td>${user.cpf}</td>
