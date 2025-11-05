@@ -56,7 +56,7 @@ document.getElementById("CEP").addEventListener("blur", function () {
       const usuario = { tipoacesso, nome, email, datanascimento, telefone, cpf, cnpj, cep, rua, numero, complemento, bairro, cidade, estado, password, confirmarpassword};
 
       try {
-        const resposta = await fetch("https://meu-json-server.onrender.com/usuarios", {
+        const resposta = await fetch("https://projeto-site-autocars.onrender.com/usuarios", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
