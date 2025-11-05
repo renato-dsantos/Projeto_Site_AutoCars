@@ -17,8 +17,8 @@
             <a href="../pages/veiculos.html">Veículos</a>
     </nav>
 </header>
-    <main>  
-    <form action="#"> 
+    <main>    
+    <form id="formCadastro"> 
         <div class="Cadastro">      
                     <h2>Dados pessoais</h2>
                     <label for="tipoAcesso">Acesso</label>
@@ -36,6 +36,9 @@
 
                     <label for="dataNascimento">Data de Nascimento</label>
                     <input id="dataNascimento" type="date">
+
+                    <label for="telefone">Telefone/label>
+                    <input id="telefone" type="tel">
 
                     <label for="txtCPF">CPF</label>
                     <input id="txtCPF" type="text"  required>
@@ -70,7 +73,7 @@
                     <input id="password" type="password"  required />
 
                     <label for="password">Confirmar Senha</label>
-                    <input id="password" type="password"  required />   
+                    <input id="confirmarPassword" type="password"  required />   
 
                     <button class="btnEntrar" type="submit">Entrar</button>
                     <button class="btnSair" type="button" onclick="window.location.href='../index.html'" >Cancelar</button>                    
