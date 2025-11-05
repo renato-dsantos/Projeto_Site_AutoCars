@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
 //lista os usuários
 
 async function carregarUsuarios() {
-  const resposta = await fetch("https://seu-projeto.onrender.com/usuarios");
+  const resposta = await fetch("https://projeto-site-autocars.onrender.com/usuarios");
   const usuarios = await resposta.json();
 
   const tabela = document.getElementById("tabelaUsuarios").querySelector("tbody");
