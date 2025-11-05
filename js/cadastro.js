@@ -41,16 +41,16 @@ document.getElementById("CEP").addEventListener("blur", function () {
       const datanascimento = document.getElementById("dataNascimento").value;
       const telefone = document.getElementById("telefone").value;
       const cpf = document.getElementById("txtCPF").value;
-      const cnpj = document.getElementById("txtCNPJ").valeu;
-      const cep = document.getElementById("CEP").valeu;
-      const rua = document.getElementById("txtRua").valeu;  
-      const numero = document.getElementById("numero").valeu;
-      const complemento = document.getElementById("txtComplemento").valeu;
-      const bairro = document.getElementById("txtBairro").valeu;
-      const cidade = document.getElementById("txtCidade").valeu;
-      const estado = document.getElementById("txtEstado").valeu;
-      const password = document.getElementById("password").valeu;
-      const confirmarpassword = document.getElementById("confirmarPassword").valeu;        
+      const cnpj = document.getElementById("txtCNPJ").value;
+      const cep = document.getElementById("CEP").value;
+      const rua = document.getElementById("txtRua").value;  
+      const numero = document.getElementById("numero").value;
+      const complemento = document.getElementById("txtComplemento").value;
+      const bairro = document.getElementById("txtBairro").value;
+      const cidade = document.getElementById("txtCidade").value;
+      const estado = document.getElementById("txtEstado").value;
+      const password = document.getElementById("password").value;
+      const confirmarpassword = document.getElementById("confirmarPassword").value;        
        
 
       const usuario = { tipoacesso, nome, email, datanascimento, telefone, cpf, cnpj, cep, rua, numero, complemento, bairro, cidade, estado, password, confirmarpassword};
