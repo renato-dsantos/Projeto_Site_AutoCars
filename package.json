@@ -1,12 +1,13 @@
 {
-  "name": "api-fake",
+  "name": "projeto_site_autocars",
   "version": "1.0.0",
+  "description": "API JSON Server para o projeto Autocars",
   "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "json-server": "^1.0.0-beta.1"
+    "json-server": "^1.0.0"
   }
 }
