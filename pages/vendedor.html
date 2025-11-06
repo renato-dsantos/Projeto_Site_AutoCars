@@ -34,7 +34,7 @@
                     <div id="carros" class="tabcontent">
                     <h3>Gerênciar carros</h3>
                     
-                            <Table>  
+                            <Table id="tabelaCarros">  
                                     
                                     <thead>
                                         <th>Código do carro</th>
@@ -42,14 +42,7 @@
                                         <th>Modelo</th>
                                         <th>Gerenciar</th> 
                                     </thead> 
-                                    <tbody>   
-                                    <td>001</td>
-                                    <td>Vosk</td>
-                                    <td>Parati</td>
-                                    <td>
-                                        <button class="btnEditar" id="btnEditarCarro"type="button">Editar</button>    
-                                        <button class="btnExcluir" id="btnExcluirCarro"type="button">Excluir</button>                                    
-                                    </td>                     
+                                                        
                                     </tbody>
                             </Table> 
                     </div>
@@ -58,10 +51,9 @@
                     <h3>Cadastrar novo carro</h3>
                     <form action="" method="post">
                        <p>Carro cadastro com sucesso!</p> 
-                        <label for="codigoVeiculo">Código do Veículo</label>
-                        <input type="number" name="codigoVeiculo" id="codigoVeiculo" required>
-                        <label for="slcMarca">Marca</label>
-                                <select id="slcMarca" name="slcMarca" required>
+                        
+                        <label for="marcaCarro">Marca</label>
+                                <select id="marcaCarro" name="marcaCarro" required>
                                     <option value="">Selecione uma marca</option>
                                     <option value="ford">Ford </option>
                                     <option value="chevrolet">Chevrolet</option>
@@ -74,8 +66,8 @@
                                     <option value="pontiac">Pontiac</option>
                                     <option value="plymouth">Plymouth</option>
                                 </select>
-                        <label for="slcModelo">Modelo</label>
-                                        <select id="modeloAntigo" name="modeloAntigo" required>
+                        <label for="modeloCarro">Modelo</label>
+                                        <select id="modeloCarro" name="modeloCarro" required>
                                             <option value="">Selecione um modelo</option>
                                             <option value="ford-modelt">Ford Model</option>
                                             <option value="chevrolet-belair">Chevrolet Bel Air</option>
@@ -94,8 +86,8 @@
                         <input type="number" name="km" id="km" required>
                         <label for="foto">Fotos</label>
                         <input type="file" name="foto" id="foto">
-                        <label for="txtDescricao">Descrição</label>
-                        <textarea type="text" name="txtDescricao" id="txtDescricao" required rows="10" cols="119" style="resize: none"></textarea>
+                        <label for="descricaoCarro">Descrição</label>
+                        <textarea type="text" name="descricaoCarro" id="descricaoCarro" required rows="10" cols="119" style="resize: none"></textarea>
                         <!--<input type="text" name="txtDescricao" id="txtDescricao" required>-->
                         
                             <div class="botoes">

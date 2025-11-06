@@ -29,3 +29,43 @@ window.addEventListener("DOMContentLoaded", () => {
     firstTab.click(); // Simula o clique no primeiro botão
   }
 });
+
+// Testando json na api do render, salvando os carros
+
+ const form = document.getElementById("formCarro");
+    const mensagem = document.getElementById("mensagem");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const marcacarro = document.getElementById("marcaCarro").value;
+      const modelocarro = document.getElementById("modeloCarro").value;
+      const anoveiculo = document.getElementById("anoVeiculo").value;
+      const km = document.getElementById("km").value;
+      const descricaocarro = document.getElementById("descricaoCarro").value;
+
+           
+       
+
+      const carro = { marcacarro, modelocarro, anoveiculo, km, descricaocarro};
+
+      try {
+        const resposta = await fetch("https://projeto-site-autocars.onrender.com/carros", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(carro)
+        });
+
+        if (resposta.ok) {
+          alert("Veículo cadastrado com sucesso!");
+          form.reset();
+        } else {
+          alert(" Erro ao cadastrar o veículo.");
+        }
+      } catch (erro) {
+        alert( "Erro de conexão com o servidor.");
+        console.error(erro);
+      }
+    });

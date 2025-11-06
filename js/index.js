@@ -37,3 +37,20 @@ function mudarSlide() {
 }
 
 setInterval(mudarSlide, 3000);
+
+//carrega o login no nav
+
+document.addEventListener("DOMContentLoaded", () => {
+  const usuario = localStorage.getItem("usuarioLogado");
+  const linkUsuario = document.getElementById("idUsuario");
+
+  if (usuario && linkUsuario) {
+    linkUsuario.textContent = usuario;
+    linkUsuario.href = "usuario.html";
+    
+  } else if (linkUsuario) {
+    
+    linkUsuario.textContent = "Login";
+    linkUsuario.href = "login.html";
+  }
+});

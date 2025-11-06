@@ -32,9 +32,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 //lista os usuários
+  const API_URL = "https://projeto-site-autocars.onrender.com/usuarios";
 
 async function carregarUsuarios() {
-  const resposta = await fetch("https://projeto-site-autocars.onrender.com/usuarios");
+  const resposta = await fetch(API_URL);
   const usuarios = await resposta.json();
 
   const tabela = document.getElementById("tabelaUsuarios").querySelector("tbody");
@@ -61,3 +62,105 @@ async function carregarUsuarios() {
 
 // Chama a função ao carregar a página
 document.addEventListener("DOMContentLoaded", carregarUsuarios);
+
+async function excluirUsuario(id) {
+  if (confirm("Tem certeza que deseja excluir este usuário?")) {
+    const resposta = await fetch(`${API_URL}/${id}`, {
+      method: "DELETE"
+    });
+
+    if (resposta.ok) {
+      alert("Usuário excluído com sucesso!");
+      carregarUsuarios();
+    } else {
+      alert("Erro ao excluir usuário.");
+    }
+  }
+}
+
+// Testando json na api do render, salvando os carros
+
+ const form = document.getElementById("formCarro");
+    const mensagem = document.getElementById("mensagem");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const marcacarro = document.getElementById("marcaCarro").value;
+      const modelocarro = document.getElementById("modeloCarro").value;
+      const anoveiculo = document.getElementById("anoVeiculo").value;
+      const km = document.getElementById("km").value;
+      const descricaocarro = document.getElementById("descricaoCarro").value;
+
+           
+       
+
+      const carro = { marcacarro, modelocarro, anoveiculo, km, descricaocarro};
+
+      try {
+        const resposta = await fetch("https://projeto-site-autocars.onrender.com/carros", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(carro)
+        });
+
+        if (resposta.ok) {
+          alert("Veículo cadastrado com sucesso!");
+          form.reset();
+        } else {
+          alert(" Erro ao cadastrar o veículo.");
+        }
+      } catch (erro) {
+        alert( "Erro de conexão com o servidor.");
+        console.error(erro);
+      }
+    });
+
+    //lista os carros
+  const API_URL_CAR = "https://projeto-site-autocars.onrender.com/carros";
+
+  async function carregarCarros() {
+  const resposta = await fetch(API_URL_CAR);
+  const carros = await resposta.json();
+
+  const tabela = document.getElementById("tabelaCarros").querySelector("tbody");
+
+  tabela.innerHTML = ""; // limpa a tabela antes de preencher
+
+  usuarios.forEach((car) => {
+    const tr = document.createElement("tr");
+
+    tr.innerHTML = `
+      <td>${car.id}</td>
+      <td>${car.marcacarro}</td>
+      <td>${car.modelocarro}</td>
+      <td>${car.anoveiculo}</td>
+      <td>${car.km}</td>
+      <td>
+        <button class="btnExcluir" data-id="${car.id}">Excluir</button>
+      </td>
+    `;
+
+    tabela.appendChild(tr);
+  });
+}
+
+// Chama a função ao carregar a página
+document.addEventListener("DOMContentLoaded", carregarCarros);
+
+async function excluirUsuario(id) {
+  if (confirm("Tem certeza que deseja excluir este carro?")) {
+    const resposta = await fetch(`${API_URL_CAR}/${id}`, {
+      method: "DELETE"
+    });
+
+    if (resposta.ok) {
+      alert("Carro excluído com sucesso!");
+      carregarCarros();
+    } else {
+      alert("Erro ao excluir o carro.");
+    }
+  }
+}
