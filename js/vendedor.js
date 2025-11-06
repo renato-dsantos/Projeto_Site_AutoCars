@@ -30,7 +30,9 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Testando json na api do render, salvando os carros
+
+
+  // Testando json na api do render, salvando os carros
 
  const form = document.getElementById("formCarro");
     const mensagem = document.getElementById("mensagem");
@@ -70,7 +72,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-       //lista os carros
+    //lista os carros
   const API_URL_CAR = "https://projeto-site-autocars.onrender.com/carros";
 
   async function carregarCarros() {
@@ -89,7 +91,9 @@ window.addEventListener("DOMContentLoaded", () => {
       <td>${car.marcacarro}</td>
       <td>${car.modelocarro}</td>
       <td>${car.anoveiculo}</td>
+      <td>${car.km}</td>
       <td>
+        <button class="btnEditar" data-id="${car.id}">Editar</button>
         <button class="btnExcluir" data-id="${car.id}">Excluir</button>
       </td>
     `;

@@ -139,6 +139,7 @@ async function excluirUsuario(id) {
       <td>${car.anoveiculo}</td>
       <td>${car.km}</td>
       <td>
+        <button class="btnEditar" data-id="${car.id}">Editar</button>
         <button class="btnExcluir" data-id="${car.id}">Excluir</button>
       </td>
     `;
