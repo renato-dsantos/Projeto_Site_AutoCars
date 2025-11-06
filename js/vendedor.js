@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Testando json na api do render, salvando os carros
 
- const form = document.getElementById("formCarro");
+ const form = document.getElementById("formCarroVen");
     const mensagem = document.getElementById("mensagem");
 
     form.addEventListener("submit", async (e) => {
@@ -79,7 +79,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const resposta = await fetch(API_URL_CAR);
   const carros = await resposta.json();
 
-  const tabela = document.getElementById("tabelaCarros").querySelector("tbody");
+  const tabela = document.getElementById("tabelaCarrosVen").querySelector("tbody");
 
   tabela.innerHTML = ""; // limpa a tabela antes de preencher
 
