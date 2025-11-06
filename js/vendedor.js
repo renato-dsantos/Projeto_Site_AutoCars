@@ -81,7 +81,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   tabela.innerHTML = ""; // limpa a tabela antes de preencher
 
-  usuarios.forEach((car) => {
+  carros.forEach((car) => {
     const tr = document.createElement("tr");
 
     tr.innerHTML = `
@@ -89,7 +89,6 @@ window.addEventListener("DOMContentLoaded", () => {
       <td>${car.marcacarro}</td>
       <td>${car.modelocarro}</td>
       <td>${car.anoveiculo}</td>
-      <td>${car.km}</td>
       <td>
         <button class="btnExcluir" data-id="${car.id}">Excluir</button>
       </td>

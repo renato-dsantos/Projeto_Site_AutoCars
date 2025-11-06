@@ -129,7 +129,7 @@ async function excluirUsuario(id) {
 
   tabela.innerHTML = ""; // limpa a tabela antes de preencher
 
-  usuarios.forEach((car) => {
+  carros.forEach((car) => {
     const tr = document.createElement("tr");
 
     tr.innerHTML = `
