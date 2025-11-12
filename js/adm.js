@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
 //lista os usuários
   const API_URL = "https://projeto-site-autocars.onrender.com/usuarios";
 
-async function carregarUsuarios() {
+  async function carregarUsuarios() {
   const resposta = await fetch(API_URL);
   const usuarios = await resposta.json();
 

@@ -1,5 +1,30 @@
 {
-    "usuarios":[],
-    "carros":[]
+    "usuarios":[{
+    "tipoacesso": "Comprador",
+    "nome": "Renato",
+    "email": "renato@gmail.com",
+    "datanascimento": "1988-05-27",
+    "telefone": "111111111111",
+    "cpf": "111111111111111",
+    "cnpj": "1111111111111",
+    "cep": "09371453",
+    "rua": "Rua Vicente Grecco",
+    "numero": "121",
+    "complemento": "ap12",
+    "bairro": "Parque São Vicente",
+    "cidade": "Mauá",
+    "estado": "SP",
+    "password": "12345678",
+    "confirmarpassword": "12345678",
+    "id": 1
+  }],
+    "carros":[{
+    "marcacarro": "ford",
+    "modelocarro": "ford-modelt",
+    "anoveiculo": "1988",
+    "km": "8877",
+    "descricaocarro": "muito bom",
+    "id": 1
+  }]
 
 }
