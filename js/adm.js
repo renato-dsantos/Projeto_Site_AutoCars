@@ -63,10 +63,19 @@ window.addEventListener("DOMContentLoaded", () => {
 // Chama a função ao carregar a página
 document.addEventListener("DOMContentLoaded", carregarUsuarios);
 
+//Excluir o usuário
+document.addEventListener("click", async (event) => {
+  if (event.target.classList.contains("btnExcluir")) {
+    const id = event.target.getAttribute("data-id");
+    await excluirUsuario(id);
+  }
+});
+
 async function excluirUsuario(id) {
   if (confirm("Tem certeza que deseja excluir este usuário?")) {
     const resposta = await fetch(`${API_URL}/${id}`, {
       method: "DELETE"
+      
     });
 
     if (resposta.ok) {
