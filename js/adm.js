@@ -52,7 +52,7 @@ window.addEventListener("DOMContentLoaded", () => {
       <td>${user.email}</td>
       <td>${user.cpf}</td>
       <td>
-        <button class="btnExcluir" data-id="${user.id}">Excluir</button>
+        <button class="btnExcluirUser" data-id="${user.id}">Excluir</button>
       </td>
     `;
 
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", carregarUsuarios);
 
 //Excluir o usuário
 document.addEventListener("click", async (event) => {
-  if (event.target.classList.contains("btnExcluir")) {
+  if (event.target.classList.contains("btnExcluirUser")) {
     const id = event.target.getAttribute("data-id");
     await excluirUsuario(id);
   }
@@ -149,7 +149,7 @@ async function excluirUsuario(id) {
       <td>${car.km}</td>
       <td>
         <button class="btnEditar" data-id="${car.id}">Editar</button>
-        <button class="btnExcluir" data-id="${car.id}">Excluir</button>
+        <button class="btnExcluirCar" data-id="${car.id}">Excluir</button>
       </td>
     `;
 
@@ -160,17 +160,26 @@ async function excluirUsuario(id) {
 // Chama a função ao carregar a página
 document.addEventListener("DOMContentLoaded", carregarCarros);
 
+//Excluir o caroos
+document.addEventListener("click", async (event) => {
+  if (event.target.classList.contains("btnExcluirCar")) {
+    const id = event.target.getAttribute("data-id");
+    await excluirUsuario(id);
+  }
+});
+
 async function excluirUsuario(id) {
   if (confirm("Tem certeza que deseja excluir este carro?")) {
-    const resposta = await fetch(`${API_URL_CAR}/${id}`, {
+    const resposta = await fetch(`${API_URL}/${id}`, {
       method: "DELETE"
+      
     });
 
     if (resposta.ok) {
       alert("Carro excluído com sucesso!");
-      carregarCarros();
+      carregarUsuarios();
     } else {
-      alert("Erro ao excluir o carro.");
+      alert("Erro ao excluir carro.");
     }
   }
 }
