@@ -28,7 +28,7 @@ document.getElementById("formId").addEventListener("submit", async (event) => {
       } else if (usuarioEncontrado.tipoacesso === "Administrador"){
         window.location.href = "adm.html";
       } else{
-        window.location.href = "index.html";
+        window.location.href = "../index.html";
       }
     } else {
       mensagem.textContent = "E-mail ou senha incorretos.";
