@@ -14,7 +14,7 @@ document.getElementById("formLogin").addEventListener("submit", async (event) =>
 
     
     const usuarioEncontrado = usuarios.find(
-      (user) => user.email === email && user.password === password
+      (user) => user.email === email && user.password === senha
     );
 
     if (usuarioEncontrado) {
@@ -25,7 +25,9 @@ document.getElementById("formLogin").addEventListener("submit", async (event) =>
       // mostra as tela do usuario ou vendedor
       if (usuarioEncontrado.tipoacesso === "vendedor") {
         window.location.href = "vendedor.html";
-      } else {
+      } else if (usuarioEncontrado.tipoacesso === "Administrador"){
+        window.location.href = "adm.html";
+      } else{
         window.location.href = "index.html";
       }
     } else {
