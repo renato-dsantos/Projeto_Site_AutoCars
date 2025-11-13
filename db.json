@@ -1,5 +1,25 @@
 {
-    "usuarios":[{
+    "usuarios":[
+      {
+    "tipoacesso": "Administrador",
+    "nome": "Renato",
+    "email": "admin@admin.com",
+    "datanascimento": "1988-05-27",
+    "telefone": "",
+    "cpf": "",
+    "cnpj": "",
+    "cep": "",
+    "rua": "",
+    "numero": "",
+    "complemento": "",
+    "bairro": "",
+    "cidade": "",
+    "estado": "",
+    "password": "admin",
+    "confirmarpassword": "admin",
+    "id": 1
+  },
+      {
     "tipoacesso": "Comprador",
     "nome": "Renato",
     "email": "renato@gmail.com",
