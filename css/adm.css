@@ -278,6 +278,8 @@ tr:hover {
 
 
 .btnExcluir,
+.btnExcluirUser,
+.btnExcluirCar,
 .btnEditar {
   background-color: #ff3300;
   color: #fff;
@@ -289,7 +291,12 @@ tr:hover {
   transition: background-color 0.3s, transform 0.2s;
 }
 
-.btnExcluir:hover {
+.btnExcluirUser:hover {
+  background-color: #cc2900;
+  transform: scale(1.05);
+}
+
+.btnExcluirCar:hover {
   background-color: #cc2900;
   transform: scale(1.05);
 }

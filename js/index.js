@@ -54,3 +54,26 @@ document.addEventListener("DOMContentLoaded", () => {
     linkUsuario.href = "login.html";
   }
 });
+
+//aba login
+
+document.addEventListener("DOMContentLoaded", () => {
+  const usuarioNome = localStorage.getItem("usuarioLogado");
+  const linkUsuario = document.querySelector(".idUsuario");
+  const linkLogin = document.querySelector(".linkLogin");
+
+  if (usuarioNome) {
+    
+    linkUsuario.textContent = usuarioNome;
+    linkUsuario.href = "../pages/usuario.html"; 
+
+    
+    if (linkLogin) {
+      linkLogin.style.display = "none";
+    }
+  } else {
+    
+    linkUsuario.textContent = "Usuário";
+    linkUsuario.href = "login.html";
+  }
+});
