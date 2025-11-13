@@ -79,7 +79,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const resposta = await fetch(API_URL_CAR);
   const carros = await resposta.json();
 
-  const tabela = document.getElementById("tabelaCarrosVen").querySelector("tbody");
+  const tabela = document.getElementById("tabelaCarros").querySelector("tbody");
 
   tabela.innerHTML = ""; // limpa a tabela antes de preencher
 
