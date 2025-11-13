@@ -160,7 +160,7 @@ async function excluirUsuario(id) {
 // Chama a função ao carregar a página
 document.addEventListener("DOMContentLoaded", carregarCarros);
 
-//Excluir o caroos
+//Excluir o carros
 document.addEventListener("click", async (event) => {
   if (event.target.classList.contains("btnExcluirCar")) {
     const id = event.target.getAttribute("data-id");
@@ -170,7 +170,7 @@ document.addEventListener("click", async (event) => {
 
 async function excluirCarro(id) {
   if (confirm("Tem certeza que deseja excluir este carro?")) {
-    const resposta = await fetch(`${API_URL}/${id}`, {
+    const resposta = await fetch(`${API_URL_CAR}/${id}`, {
       method: "DELETE"
       
     });
