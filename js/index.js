@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault(); // evita recarregar a página
       localStorage.removeItem("usuarioLogado");
       alert("Você saiu da sua conta.");
-      window.location.href = "login.html"; // redireciona pro login
+      window.location.href = "index.html"; // redireciona pro login
     });
   } else {
     // ✅ Usuário não logado
