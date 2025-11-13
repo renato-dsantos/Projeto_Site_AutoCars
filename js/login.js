@@ -1,6 +1,6 @@
 const API_URL = "https://projeto-site-autocars.onrender.com/usuarios";
 
-document.getElementById("formLogin").addEventListener("submit", async (event) => {
+document.getElementById("formId").addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const email = document.getElementById("email").value.trim();
