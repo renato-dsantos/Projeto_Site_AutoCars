@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const usuarioNome = localStorage.getItem("usuarioLogado");
   const linkUsuario = document.querySelector(".idUsuario");
   const linkLogin = document.querySelector(".linkLogin");
-  const linkLogout = document.getElementById("linkLogout");
+  const linkLogout = document.getElementById(".linkLogout");
 
   if (usuarioNome) {
     // ✅ Mostra o nome do usuário logado
