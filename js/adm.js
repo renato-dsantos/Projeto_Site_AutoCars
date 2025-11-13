@@ -164,11 +164,11 @@ document.addEventListener("DOMContentLoaded", carregarCarros);
 document.addEventListener("click", async (event) => {
   if (event.target.classList.contains("btnExcluirCar")) {
     const id = event.target.getAttribute("data-id");
-    await excluirUsuario(id);
+    await excluirCarro(id);
   }
 });
 
-async function excluirUsuario(id) {
+async function excluirCarro(id) {
   if (confirm("Tem certeza que deseja excluir este carro?")) {
     const resposta = await fetch(`${API_URL}/${id}`, {
       method: "DELETE"
