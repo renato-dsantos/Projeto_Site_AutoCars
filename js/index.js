@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     // ✅ Usuário não logado
     linkUsuario.textContent = "Usuário";
-    linkUsuario.href = "login.html";
+    linkUsuario.href = "index.html";
 
     if (linkLogout) linkLogout.style.display = "none";
   }
