@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (usuarioNome) {
     // ✅ Mostra o nome do usuário logado
     linkUsuario.textContent = usuarioNome;
-    linkUsuario.href = "usuario.html";
+    linkUsuario.href = "pages/usuario.html";
 
     // ✅ Esconde o link de login
     if (linkLogin) linkLogin.style.display = "none";
