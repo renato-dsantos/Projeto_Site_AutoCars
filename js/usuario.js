@@ -118,7 +118,7 @@ async function carregarUsuario() {
     }
 }
 
-sync function salvarAlteracoes(event) {
+async function salvarAlteracoes(event) {
     event.preventDefault(); // impede recarregar a página
 
     const usuarioId = document.getElementById("id").value;
@@ -154,7 +154,6 @@ sync function salvarAlteracoes(event) {
         } else {
             alert("Erro ao salvar as alterações.");
         }
-
     } catch (erro) {
         console.error("Erro ao atualizar usuário:", erro);
         alert("Erro ao salvar as alterações.");
