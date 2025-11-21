@@ -80,9 +80,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    carregarUsuario();
 
-document.addEventListener("DOMContentLoaded", carregarUsuario);
+    const form = document.getElementById("formEditarUsuario");
+    form.addEventListener("submit", salvarAlteracoes);
+});
 
+// ========================
+// 1. CARREGAR USUÁRIO
+// ========================
 async function carregarUsuario() {
     const usuarioId = localStorage.getItem("usuarioLogadoId");
 
@@ -96,7 +103,6 @@ async function carregarUsuario() {
         const resposta = await fetch(`https://projeto-site-autocars.onrender.com/usuarios/${usuarioId}`);
         const usuario = await resposta.json();
 
-        // Preenche todos os campos com base no seu formulário
         document.getElementById("id").value = usuario.id || "";
         document.getElementById("nome").value = usuario.nome || "";
         document.getElementById("email").value = usuario.email || "";
@@ -118,10 +124,13 @@ async function carregarUsuario() {
     }
 }
 
+// ========================
+// 2. SALVAR ALTERAÇÕES (PUT)
+// ========================
 async function salvarAlteracoes(event) {
     event.preventDefault(); // impede recarregar a página
 
-    const usuarioId = document.getElementById("usuarioLogadoId").value;
+    const usuarioId = document.getElementById("id").value;
 
     const usuarioAtualizado = {
         id: usuarioId,
@@ -159,3 +168,5 @@ async function salvarAlteracoes(event) {
         alert("Erro ao salvar as alterações.");
     }
 }
+
+
