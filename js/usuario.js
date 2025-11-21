@@ -82,11 +82,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Carrega o usuário do localStorage enviado pela lista
-    const usuario = JSON.parse(localStorage.getItem("usuarioEditar"));
+    // Pega o usuário logado
+    const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
 
     if (!usuario) {
-        alert("Nenhum usuário selecionado para edição!");
+        alert("Nenhum usuário logado!");
         return;
     }
 
@@ -112,7 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("formEditarUsuario").addEventListener("submit", function (e) {
         e.preventDefault();
 
-        // Monta objeto editado
         const usuarioEditado = {
             tipoacesso: tipoacesso.value,
             nome: nome.value,
@@ -130,30 +129,27 @@ document.addEventListener("DOMContentLoaded", () => {
             estado: estado.value,
             password: password.value,
             confirmarpassword: confirmarpassword.value,
-            id: parseInt(id.value)
+            id: usuario.id
         };
 
-        // 👉 Envia para o JSON Server no Render
+        // 👉 Atualiza no JSON Server (Render)
         fetch(`https://projeto-site-autocars.onrender.com/usuarios/${usuario.id}`, {
             method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(usuarioEditado)
         })
-        .then(res => {
-            if (!res.ok) {
-                throw new Error("Erro ao atualizar o usuário no servidor!");
-            }
-            return res.json();
-        })
+        .then(res => res.json())
         .then(() => {
-            alert("Usuário atualizado com sucesso!");
-            window.location.href = "listaUsuarios.html";
+            alert("Dados atualizados!");
+
+            // Atualiza o localStorage do usuário logado
+            localStorage.setItem("usuarioLogado", JSON.stringify(usuarioEditado));
+
+            window.location.reload();
         })
         .catch(err => {
             console.error(err);
-            alert("Erro ao atualizar, tente novamente!");
+            alert("Erro ao atualizar!");
         });
     });
 });
