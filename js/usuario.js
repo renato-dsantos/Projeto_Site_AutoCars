@@ -80,76 +80,45 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
-    // Pega o usuário logado
-    const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
+    const idLogado = localStorage.getItem("usuarioLogadoId");
 
-    if (!usuario) {
+    if (!idLogado) {
         alert("Nenhum usuário logado!");
         return;
     }
 
-    // Preenche o formulário com os dados existentes
-    document.getElementById("nome").value = usuario.nome;
-    document.getElementById("email").value = usuario.email;
-    document.getElementById("datanascimento").value = usuario.datanascimento;
-    document.getElementById("telefone").value = usuario.telefone;
-    document.getElementById("cpf").value = usuario.cpf;
-    document.getElementById("cnpj").value = usuario.cnpj;
-    document.getElementById("cep").value = usuario.cep;
-    document.getElementById("rua").value = usuario.rua;
-    document.getElementById("numero").value = usuario.numero;
-    document.getElementById("complemento").value = usuario.complemento;
-    document.getElementById("bairro").value = usuario.bairro;
-    document.getElementById("cidade").value = usuario.cidade;
-    document.getElementById("estado").value = usuario.estado;
-    document.getElementById("password").value = usuario.password;
-    document.getElementById("confirmarpassword").value = usuario.confirmarpassword;
-    document.getElementById("id").value = usuario.id;
+    // Buscar usuário na API
+    try {
+        const res = await fetch(`https://projeto-site-autocars.onrender.com/usuarios/${idLogado}`);
 
-    // Salvar edição
-    document.getElementById("formEditarUsuario").addEventListener("submit", function (e) {
-        e.preventDefault();
+        if (!res.ok) {
+            throw new Error("Erro ao buscar usuário");
+        }
 
-        const usuarioEditado = {
-            tipoacesso: tipoacesso.value,
-            nome: nome.value,
-            email: email.value,
-            datanascimento: datanascimento.value,
-            telefone: telefone.value,
-            cpf: cpf.value,
-            cnpj: cnpj.value,
-            cep: cep.value,
-            rua: rua.value,
-            numero: numero.value,
-            complemento: complemento.value,
-            bairro: bairro.value,
-            cidade: cidade.value,
-            estado: estado.value,
-            password: password.value,
-            confirmarpassword: confirmarpassword.value,
-            id: usuario.id
-        };
+        const usuario = await res.json();
 
-        // 👉 Atualiza no JSON Server (Render)
-        fetch(`https://projeto-site-autocars.onrender.com/usuarios/${usuario.id}`, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(usuarioEditado)
-        })
-        .then(res => res.json())
-        .then(() => {
-            alert("Dados atualizados!");
+        // Preencher formulário
+        document.getElementById("nome").value = usuario.nome || "";
+        document.getElementById("email").value = usuario.email || "";
+        document.getElementById("datanascimento").value = usuario.datanascimento || "";
+        document.getElementById("telefone").value = usuario.telefone || "";
+        document.getElementById("cpf").value = usuario.cpf || "";
+        document.getElementById("cnpj").value = usuario.cnpj || "";
+        document.getElementById("cep").value = usuario.cep || "";
+        document.getElementById("rua").value = usuario.rua || "";
+        document.getElementById("numero").value = usuario.numero || "";
+        document.getElementById("complemento").value = usuario.complemento || "";
+        document.getElementById("bairro").value = usuario.bairro || "";
+        document.getElementById("cidade").value = usuario.cidade || "";
+        document.getElementById("estado").value = usuario.estado || "";
+        document.getElementById("password").value = usuario.password || "";
+        document.getElementById("confirmarpassword").value = usuario.confirmarpassword || "";
+        document.getElementById("id").value = usuario.id;
 
-            // Atualiza o localStorage do usuário logado
-            localStorage.setItem("usuarioLogado", JSON.stringify(usuarioEditado));
-
-            window.location.reload();
-        })
-        .catch(err => {
-            console.error(err);
-            alert("Erro ao atualizar!");
-        });
-    });
+    } catch (err) {
+        console.error(err);
+        alert("Erro ao carregar dados do usuário!");
+    }
 });
