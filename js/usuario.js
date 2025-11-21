@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const usuarioNome = localStorage.getItem("usuarioLogado");
+  const idLogado = localStorage.getItem("usuarioLogado");
   const linkUsuario = document.querySelector(".idUsuario");
   const linkLogin = document.querySelector(".linkLogin");
   const linkLogout = document.getElementById("linkLogout");
@@ -80,29 +81,26 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", carregarUsuario);
 
-    const idLogado = localStorage.getItem("usuarioLogadoId");
+async function carregarUsuario() {
+    const usuarioId = localStorage.getItem("usuarioLogadoId");
 
-    if (!idLogado) {
-        alert("Nenhum usuário logado!");
+    if (!usuarioId) {
+        alert("Nenhum usuário logado.");
+        window.location.href = "login.html";
         return;
     }
 
-    // Buscar usuário na API
     try {
-        const res = await fetch(`https://projeto-site-autocars.onrender.com/usuarios/${idLogado}`);
+        const resposta = await fetch(`https://projeto-site-autocars.onrender.com/usuarios/${usuarioId}`);
+        const usuario = await resposta.json();
 
-        if (!res.ok) {
-            throw new Error("Erro ao buscar usuário");
-        }
-
-        const usuario = await res.json();
-
-        // Preencher formulário
+        // Preenche todos os campos com base no seu formulário
+        document.getElementById("id").value = usuario.id || "";
         document.getElementById("nome").value = usuario.nome || "";
         document.getElementById("email").value = usuario.email || "";
-        document.getElementById("datanascimento").value = usuario.datanascimento || "";
+        document.getElementById("datanascimento").value = usuario.datanascimento || usuario.nascimento || "";
         document.getElementById("telefone").value = usuario.telefone || "";
         document.getElementById("cpf").value = usuario.cpf || "";
         document.getElementById("cnpj").value = usuario.cnpj || "";
@@ -113,12 +111,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById("bairro").value = usuario.bairro || "";
         document.getElementById("cidade").value = usuario.cidade || "";
         document.getElementById("estado").value = usuario.estado || "";
-        document.getElementById("password").value = usuario.password || "";
-        document.getElementById("confirmarpassword").value = usuario.confirmarpassword || "";
-        document.getElementById("id").value = usuario.id;
 
-    } catch (err) {
-        console.error(err);
-        alert("Erro ao carregar dados do usuário!");
+    } catch (erro) {
+        console.error("Erro ao carregar usuário:", erro);
+        alert("Erro ao carregar os dados do usuário.");
     }
-});
+}
