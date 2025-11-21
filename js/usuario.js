@@ -27,6 +27,58 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+//carrega o login no nav
+
+document.addEventListener("DOMContentLoaded", () => {
+  const usuario = localStorage.getItem("usuarioLogado");
+  const linkUsuario = document.getElementById("idUsuario");
+
+  if (usuario && linkUsuario) {
+    linkUsuario.textContent = usuario;
+    linkUsuario.href = "pages/usuario.html";
+    
+  } else if (linkUsuario) {
+    
+    linkUsuario.textContent = "Login";
+    linkUsuario.href = "login.html";
+  }
+});
+
+//aba login
+
+document.addEventListener("DOMContentLoaded", () => {
+  const usuarioNome = localStorage.getItem("usuarioLogado");
+  const linkUsuario = document.querySelector(".idUsuario");
+  const linkLogin = document.querySelector(".linkLogin");
+  const linkLogout = document.getElementById("linkLogout");
+
+  if (usuarioNome) {
+    // ✅ Mostra o nome do usuário logado
+    linkUsuario.textContent = usuarioNome;
+    linkUsuario.href = "pages/usuario.html";
+
+    // ✅ Esconde o link de login
+    if (linkLogin) linkLogin.style.display = "none";
+
+    // ✅ Mostra o link de sair
+    if (linkLogout) linkLogout.style.display = "inline";
+
+    // ✅ Quando clicar em “Sair”
+    linkLogout.addEventListener("click", (event) => {
+      event.preventDefault(); // evita recarregar a página
+      localStorage.removeItem("usuarioLogado");
+      alert("Você saiu da sua conta.");
+      window.location.href = "index.html"; // redireciona pro login
+    });
+  } else {
+    // ✅ Usuário não logado
+    linkUsuario.textContent = "Usuário";
+    linkUsuario.href = "index.html";
+
+    if (linkLogout) linkLogout.style.display = "none";
+  }
+});
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
