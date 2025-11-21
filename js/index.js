@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (usuario && linkUsuario) {
     linkUsuario.textContent = usuario;
-    linkUsuario.href = "usuario.html";
+    linkUsuario.href = "pages/usuario.html";
     
   } else if (linkUsuario) {
     
