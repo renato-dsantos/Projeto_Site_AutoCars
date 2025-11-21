@@ -121,7 +121,7 @@ async function carregarUsuario() {
 async function salvarAlteracoes(event) {
     event.preventDefault(); // impede recarregar a página
 
-    const usuarioId = document.getElementById("id").value;
+    const usuarioId = document.getElementById("usuarioLogadoId").value;
 
     const usuarioAtualizado = {
         id: usuarioId,
