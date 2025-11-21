@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
 
     // Carrega o usuário do localStorage enviado pela lista
-    const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
+    const usuario = JSON.parse(localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
 
     if (!usuario) {
         alert("Nenhum usuário selecionado para edição!");
@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Preenche o formulário com os dados existentes
-    document.getElementById("tipoacesso").value = usuario.tipoacesso;
     document.getElementById("nome").value = usuario.nome;
     document.getElementById("email").value = usuario.email;
     document.getElementById("datanascimento").value = usuario.datanascimento;
