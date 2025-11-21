@@ -117,3 +117,46 @@ async function carregarUsuario() {
         alert("Erro ao carregar os dados do usuário.");
     }
 }
+
+sync function salvarAlteracoes(event) {
+    event.preventDefault(); // impede recarregar a página
+
+    const usuarioId = document.getElementById("id").value;
+
+    const usuarioAtualizado = {
+        id: usuarioId,
+        nome: document.getElementById("nome").value,
+        email: document.getElementById("email").value,
+        datanascimento: document.getElementById("datanascimento").value,
+        telefone: document.getElementById("telefone").value,
+        cpf: document.getElementById("cpf").value,
+        cnpj: document.getElementById("cnpj").value,
+        cep: document.getElementById("cep").value,
+        rua: document.getElementById("rua").value,
+        numero: document.getElementById("numero").value,
+        complemento: document.getElementById("complemento").value,
+        bairro: document.getElementById("bairro").value,
+        cidade: document.getElementById("cidade").value,
+        estado: document.getElementById("estado").value
+    };
+
+    try {
+        const resposta = await fetch(`https://projeto-site-autocars.onrender.com/usuarios/${usuarioId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(usuarioAtualizado)
+        });
+
+        if (resposta.ok) {
+            alert("Dados atualizados com sucesso!");
+        } else {
+            alert("Erro ao salvar as alterações.");
+        }
+
+    } catch (erro) {
+        console.error("Erro ao atualizar usuário:", erro);
+        alert("Erro ao salvar as alterações.");
+    }
+}
