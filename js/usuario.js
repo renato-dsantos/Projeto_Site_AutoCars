@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
 
     // Carrega o usuário do localStorage enviado pela lista
-    const usuario = JSON.parse(localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
+    const usuario = JSON.parse(localStorage.setItem(JSON.stringify(usuario));
 
     if (!usuario) {
         alert("Nenhum usuário selecionado para edição!");
