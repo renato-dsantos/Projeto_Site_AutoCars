@@ -90,7 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
- const cookieKey = 'cookieConsent';
+//configuraçãoe do termo de ustilização de cookies
+
+const cookieKey = 'cookieConsent';
 
 
 // Exibir banner se não houver consentimento
@@ -110,15 +112,18 @@ console.log('Todos os cookies aceitos');
 }
 
 
-// Configurar cookies (exemplo: apenas loga no console)
-function configureCookies() {
-alert('Aqui você pode implementar configuração detalhada de cookies.');
+// Recusar cookies (apenas essenciais)
+function declineCookies() {
+const consent = {essential:true, analytics:false, marketing:false, ts:Date.now()};
+localStorage.setItem(cookieKey, JSON.stringify(consent));
+document.getElementById('cookieBar').style.display = 'none';
+console.log('Cookies recusados, apenas essenciais ativados');
 }
 
 
 // Eventos
 document.getElementById('btnAccept').addEventListener('click', acceptAllCookies);
-document.getElementById('btnManage').addEventListener('click', configureCookies);
+document.getElementById('btnDecline').addEventListener('click', declineCookies);
 
 
 // Ao carregar a página
