@@ -89,3 +89,41 @@ document.addEventListener("DOMContentLoaded", () => {
     if (linkLogout) linkLogout.style.display = "none";
   }
 });
+
+ // Simple cookie consent logic (uses localStorage)
+    const cookieKey = 'seusite_cookie_consent_v1';
+    function showCookieBar(){
+      if(!localStorage.getItem(cookieKey)) document.getElementById('cookieBar').style.display='flex';
+    }
+    function acceptAll(){
+      const consent = {essencial:true, analytics:true, marketing:true, ts:Date.now()};
+      localStorage.setItem(cookieKey, JSON.stringify(consent));
+      document.getElementById('cookieBar').style.display='none';
+    }
+    function openModal(){
+      document.getElementById('cookieModal').style.display='flex';
+    }
+    function closeModal(){
+      document.getElementById('cookieModal').style.display='none';
+    }
+    function savePreferences(){
+      const consent = {
+        essencial: true,
+        analytics: document.getElementById('c_analytics').checked,
+        marketing: document.getElementById('c_marketing').checked,
+        ts: Date.now()
+      };
+      localStorage.setItem(cookieKey, JSON.stringify(consent));
+      closeModal();
+      document.getElementById('cookieBar').style.display='none';
+      // Aqui você pode ativar/desativar scripts de analytics/ads conforme consent.
+      console.log('Consentimento salvo:', consent);
+    }
+
+    document.getElementById('btnAccept').addEventListener('click', acceptAll);
+    document.getElementById('btnManage').addEventListener('click', openModal);
+    document.getElementById('btnCloseModal').addEventListener('click', closeModal);
+    document.getElementById('btnSaveCookies').addEventListener('click', savePreferences);
+
+    // Ao carregar a página, exibe o banner se não houver consentimento
+    window.addEventListener('load', showCookieBar);
