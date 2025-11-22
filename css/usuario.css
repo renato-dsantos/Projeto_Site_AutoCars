@@ -50,7 +50,7 @@ header h1:hover {
   transform: scale(1.05);
 }
 
-/* MENU */
+
 nav {
   display: flex;
   gap: 25px;
@@ -89,7 +89,7 @@ main {
   overflow: hidden;
 }
 
-/* BOTÕES DAS TABS */
+
 .tab button {
   background-color: transparent;
   font-family: 'Racing Sans One', sans-serif;
@@ -116,7 +116,7 @@ main {
   font-weight: bold;
 }
 
-/* CONTEÚDO DAS TABS */
+
 .tabcontent {
   flex: 3;
   background-color: #1a1a1a;
@@ -128,13 +128,13 @@ main {
   animation: fadeEffect 0.5s ease;
 }
 
-/* ANIMAÇÃO */
+
 @keyframes fadeEffect {
   from {opacity: 0;}
   to {opacity: 1;}
 }
 
-/* TITULOS DENTRO DAS TABS */
+
 .tabcontent h2 {
   color: #ff6600;
   border-left: 5px solid #ff6600;
@@ -143,7 +143,7 @@ main {
   margin-bottom: 15px;
 }
 
-/* RESPONSIVIDADE */
+/* tstando reponsividade */
 @media (max-width: 900px) {
   main {
     flex-direction: column;
@@ -157,4 +157,27 @@ main {
   .tabcontent {
     min-height: auto;
   }
+}
+
+#formEditarUsuario{
+  background-color: #1a1a1a;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#formEditarUsuario input,
+#formEditarUsuario  select {
+  padding: 12px 15px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #222;
+  color: #fff;
+  font-size: 16px;
+  width: 100%;
 }
