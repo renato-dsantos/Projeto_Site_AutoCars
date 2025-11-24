@@ -159,16 +159,22 @@ main {
   }
 }
 
+#dados{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  justify-items: center;
+}
+
 #formEditarUsuario{
   background-color: #1a1a1a;
   padding: 30px 40px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(255, 102, 0, 0.2);
   width: 100%;
-  max-width: 500px;
-  /*display: flex;
-  flex-direction: column;
-  gap: 15px;*/
+  max-width: 1000px; 
+  margin-top: 20px;
+  
 }
 
 #formEditarUsuario input,
@@ -191,12 +197,11 @@ main {
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
   margin-top: 15px;
+  text-align: center;
+  background-color: #ff6600;
+  color: #fff;  
 }
 
-#btnSalvar {
-  background-color: #ff6600;
-  color: #fff;
-}
 
 #btnSalvar:hover {
   background-color: #ff3300;
