@@ -62,15 +62,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (usuarioNome == "Administrador"){ 
       linkUsuario.textContent = usuarioNome;
         console.log("Bem vindo adm");
-       linkUsuario.href = "pages/adm.html";
+       linkUsuario.href = "adm.html";
     }else if (tipodeacesso == "Vendedor"){ 
       linkUsuario.textContent = usuarioNome;
     console.log("Bem vindo ven");
-      linkUsuario.href = "pages/vendedor.html";
+      linkUsuario.href = "vendedor.html";
     } else if (tipodeacesso == "Comprador"){ 
       linkUsuario.textContent = usuarioNome;
     console.log("Bem vindo use");
-      linkUsuario.href = "pages/usuario.html";
+      linkUsuario.href = "usuario.html";
     }
    
     if (linkLogin) linkLogin.style.display = "none";
