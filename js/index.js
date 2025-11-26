@@ -69,18 +69,17 @@ document.addEventListener("DOMContentLoaded", () => {
     /*linkUsuario.textContent = usuarioNome;
     linkUsuario.href = "pages/usuario.html";*/
 
-    if (usuarioNome == "Administrador") 
+    if (usuarioNome == "Administrador"){
       linkUsuario.textContent = usuarioNome;
        linkUsuario.href = "pages/adm.html";
 
-     if (tipodeacesso == "Vendedor") 
+    }else if (tipodeacesso == "Vendedor") {
       linkUsuario.textContent = usuarioNome;
       linkUsuario.href = "pages/vendedor.html";
-
-      if (tipodeacesso == "Comprador") 
+    }else(tipodeacesso == "Comprador") {
       linkUsuario.textContent = usuarioNome;
       linkUsuario.href = "pages/usuario.html";
-
+    }
    
     if (linkLogin) linkLogin.style.display = "none";
 
