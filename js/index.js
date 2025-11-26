@@ -69,21 +69,19 @@ document.addEventListener("DOMContentLoaded", () => {
     /*linkUsuario.textContent = usuarioNome;
     linkUsuario.href = "pages/usuario.html";*/
 
-    if (usuarioNome == "Administrador") 
+    if (usuarioNome == "Administrador"){ 
       linkUsuario.textContent = usuarioNome;
         console.log("Bem vindo adm");
        linkUsuario.href = "pages/adm.html";
-
-     if (tipodeacesso == "Vendedor") 
+    }else if (tipodeacesso == "Vendedor"){ 
       linkUsuario.textContent = usuarioNome;
     console.log("Bem vindo ven");
       linkUsuario.href = "pages/vendedor.html";
-
-      if (tipodeacesso == "Comprador") 
+    } else if (tipodeacesso == "Comprador"){ 
       linkUsuario.textContent = usuarioNome;
     console.log("Bem vindo use");
       linkUsuario.href = "pages/usuario.html";
-
+    }
    
     if (linkLogin) linkLogin.style.display = "none";
 
