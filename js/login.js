@@ -21,11 +21,11 @@ document.getElementById("formId").addEventListener("submit", async (event) => {
       
       localStorage.setItem("usuarioLogado", usuarioEncontrado.nome);
       localStorage.setItem("usuarioLogadoId", usuarioEncontrado.id);
-      localStorage.setItem("usuarioLogadoId", usuarioEncontrado.tipoacesso);
+      localStorage.setItem("tipodeacesso", usuarioEncontrado.tipoacesso);
       
 
       // mostra as tela do usuario ou vendedor
-      if (usuarioEncontrado.tipoacesso === "vendedor") {
+      if (usuarioEncontrado.tipoacesso === "Vendedor") {
         window.location.href = "vendedor.html";
       } else if (usuarioEncontrado.tipoacesso === "Administrador"){
         window.location.href = "adm.html";
