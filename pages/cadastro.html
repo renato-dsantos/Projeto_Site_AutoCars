@@ -22,7 +22,7 @@
         <div class="Cadastro">      
                     <h2>Dados pessoais</h2>
                     <label for="tipoAcesso">Acesso</label>
-                    <select id="tipoAcesso" name="tipoAcesso" required>
+                    <select id="tipoAcesso" name="tipoAcesso" onchange="mostrarCampo()" required>
                                     <option value="">Selecione o tipo de acesso:</option>
                                     <option value="Comprador">Comprador </option>
                                     <option value="vendedor">Vendedor </option>
@@ -40,11 +40,15 @@
                     <label for="telefone">Telefone</label>
                     <input id="telefone" type="tel">
 
-                    <label for="txtCPF">CPF</label>
-                    <input id="txtCPF" type="text"  required>
-
-                    <label for="txtCNPJ">CNPJ</label>
-                    <input id="txtCNPJ" type="text"  required>
+                    <div id="container_cpf">
+                    <label id="cpfCpnj" for="txtCPF">CPF</label>
+                    <input id="txtCPF" type="text">
+                    </div>     
+                    
+                    <div id="container_cnpj" style="display: none;">
+                    <label id="cpfCpnj" for="txtCNPJ">CNPJ</label>
+                    <input id="txtCNPJ" type="text">
+                    </div>
 
                     <h2>Endereço</h2>
 

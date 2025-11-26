@@ -157,6 +157,11 @@ form{
   transform: translateY(-2px);
 }
 
+.cpfCpnj {
+    display: block;
+    
+}
+
 
 @media (max-width: 600px) {
   .Cadastro {

@@ -1,3 +1,24 @@
+function mostrarCampo() {
+    var tipoAcesso = document.getElementById("tipoAcesso");
+    var containerCpf = document.getElementById("container_cpf");
+    var containerCnpj = document.getElementById("container_cnpj");
+
+    // Oculta ambos os campos primeiro para evitar sobreposição
+    containerCpf.style.display = "none";
+    containerCnpj.style.display = "none";
+
+    // Mostra o campo selecionado
+    if (tipoAcesso.value === "Comprador") {
+        containerCpf.style.display = "block";
+    } else if (tipoAcesso.value === "Vendedor") {
+        containerCnpj.style.display = "block";
+    }
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    mostrarCampo();
+});
+
 // Ao sair do campo de CEP, busca o endereço
 document.getElementById("CEP").addEventListener("blur", function () {
   const cep = this.value.trim();

@@ -37,7 +37,26 @@
     "password": "12345678",
     "confirmarpassword": "12345678",
     "id": 2
-  }],
+  },
+  {
+    "tipoacesso": "Vendedor",
+    "nome": "Gabriel",
+    "email": "gabriel@gmail.com",
+    "datanascimento": "1988-05-27",
+    "telefone": "999999999",
+    "cpf": "",
+    "cnpj": "99999999900001",
+    "cep": "09371453",
+    "rua": "Rua Vicente Grecco",
+    "numero": "121",
+    "complemento": "ap12",
+    "bairro": "Parque São Vicente",
+    "cidade": "Mauá",
+    "estado": "SP",
+    "password": "12345678",
+    "confirmarpassword": "12345678",
+    "id": 3
+}],
     "carros":[{
     "marcacarro": "ford",
     "modelocarro": "ford-modelt",

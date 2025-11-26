@@ -3,7 +3,7 @@ const indicadores = document.querySelector(".carrossel-indicadores");
 const logos = document.querySelectorAll(".logo-item");
 
 let index = 0;
-const visiveis = 5; // Quantos logos aparecem por vez
+const visiveis = 5; // quantos logos aparecem por vez
 const total = logos.length;
 
 // quantidade real de slides
@@ -63,18 +63,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const linkLogin = document.querySelector(".linkLogin");
   const linkLogout = document.getElementById("linkLogout");
 
-  if (usuarioNome) {
-    // ✅ Mostra o nome do usuário logado
+   if (usuarioNome) {
+   
     linkUsuario.textContent = usuarioNome;
     linkUsuario.href = "pages/usuario.html";
 
-    // ✅ Esconde o link de login
+    if (usuarioNome == "Administrador") 
+      linkUsuario.textContent = usuarioNome;
+    linkUsuario.href = "pages/adm.html";
+
+     if (usuarioNome == "Vendedor") 
+      linkUsuario.textContent = usuarioNome;
+      linkUsuario.href = "pages/vendedor.html";
+
+   
     if (linkLogin) linkLogin.style.display = "none";
 
-    // ✅ Mostra o link de sair
+    
     if (linkLogout) linkLogout.style.display = "inline";
 
-    // ✅ Quando clicar em “Sair”
+    
     linkLogout.addEventListener("click", (event) => {
       event.preventDefault(); // evita recarregar a página
       localStorage.removeItem("usuarioLogado");
@@ -82,8 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = "index.html"; // redireciona pro login
     });
   } else {
-    // ✅ Usuário não logado
-    linkUsuario.textContent = "Usuário";
+    linkUsuario.textContent = "";
     linkUsuario.href = "index.html";
 
     if (linkLogout) linkLogout.style.display = "none";
