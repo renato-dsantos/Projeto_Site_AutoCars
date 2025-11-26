@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const usuarioNome = localStorage.getItem("usuarioLogado");
+  const tipodeacesso = localStorage.getItem("usuarioLogadoId");
   const linkUsuario = document.querySelector(".idUsuario");
   const linkLogin = document.querySelector(".linkLogin");
   const linkLogout = document.getElementById("linkLogout");
@@ -72,11 +73,11 @@ document.addEventListener("DOMContentLoaded", () => {
       linkUsuario.textContent = usuarioNome;
     linkUsuario.href = "pages/adm.html";
 
-     if (usuarioNome == "Vendedor") 
+     if (tipodeacesso == "Vendedor") 
       linkUsuario.textContent = usuarioNome;
       linkUsuario.href = "pages/vendedor.html";
 
-      if (usuarioNome == "Comprador") 
+      if (tipodeacesso == "Comprador") 
       linkUsuario.textContent = usuarioNome;
       linkUsuario.href = "pages/usuario.html";
 
