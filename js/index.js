@@ -69,9 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
     /*linkUsuario.textContent = usuarioNome;
     linkUsuario.href = "pages/usuario.html";*/
 
-    if (tipodeacesso == "Administrador") 
+    if (usuarioNome == "Administrador") 
       linkUsuario.textContent = usuarioNome;
-    linkUsuario.href = "pages/adm.html";
+       linkUsuario.href = "pages/adm.html";
 
      if (tipodeacesso == "Vendedor") 
       linkUsuario.textContent = usuarioNome;
