@@ -76,6 +76,10 @@ document.addEventListener("DOMContentLoaded", () => {
       linkUsuario.textContent = usuarioNome;
       linkUsuario.href = "pages/vendedor.html";
 
+      if (usuarioNome == "Comprador") 
+      linkUsuario.textContent = usuarioNome;
+      linkUsuario.href = "pages/usuario.html";
+
    
     if (linkLogin) linkLogin.style.display = "none";
 
