@@ -21,6 +21,7 @@ document.getElementById("formId").addEventListener("submit", async (event) => {
       
       localStorage.setItem("usuarioLogado", usuarioEncontrado.nome);
       localStorage.setItem("usuarioLogadoId", usuarioEncontrado.id);
+      localStorage.setItem("usuarioLogadoId", usuarioEncontrado.tipoacesso);
       
 
       // mostra as tela do usuario ou vendedor
