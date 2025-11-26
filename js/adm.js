@@ -183,3 +183,52 @@ async function excluirCarro(id) {
     }
   }
 }
+
+
+//aba login
+
+document.addEventListener("DOMContentLoaded", () => {
+  const usuarioNome = localStorage.getItem("usuarioLogado");
+  const tipodeacesso = localStorage.getItem("tipodeacesso");
+  const linkUsuario = document.querySelector(".idUsuario");
+  const linkLogin = document.querySelector(".linkLogin");
+  const linkLogout = document.getElementById("linkLogout");
+
+   if (usuarioNome) {
+   
+    /*linkUsuario.textContent = usuarioNome;
+    linkUsuario.href = "pages/usuario.html";*/
+
+    if (usuarioNome == "Administrador"){ 
+      linkUsuario.textContent = usuarioNome;
+        console.log("Bem vindo adm");
+       linkUsuario.href = "pages/adm.html";
+    }else if (tipodeacesso == "Vendedor"){ 
+      linkUsuario.textContent = usuarioNome;
+    console.log("Bem vindo ven");
+      linkUsuario.href = "pages/vendedor.html";
+    } else if (tipodeacesso == "Comprador"){ 
+      linkUsuario.textContent = usuarioNome;
+    console.log("Bem vindo use");
+      linkUsuario.href = "pages/usuario.html";
+    }
+   
+    if (linkLogin) linkLogin.style.display = "none";
+
+    
+    if (linkLogout) linkLogout.style.display = "inline";
+
+    
+    linkLogout.addEventListener("click", (event) => {
+      event.preventDefault(); // evita recarregar a página
+      localStorage.removeItem("usuarioLogado");
+      alert("Você saiu da sua conta.");
+      window.location.href = "index.html"; // redireciona pro login
+    });
+  } else {
+    linkUsuario.textContent = "";
+    linkUsuario.href = "index.html";
+
+    if (linkLogout) linkLogout.style.display = "none";
+  }
+});

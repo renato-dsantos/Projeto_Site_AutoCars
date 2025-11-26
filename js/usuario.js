@@ -46,25 +46,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //aba login
 
+
 document.addEventListener("DOMContentLoaded", () => {
   const usuarioNome = localStorage.getItem("usuarioLogado");
-  const idLogado = localStorage.getItem("usuarioLogado");
+  const tipodeacesso = localStorage.getItem("tipodeacesso");
   const linkUsuario = document.querySelector(".idUsuario");
   const linkLogin = document.querySelector(".linkLogin");
   const linkLogout = document.getElementById("linkLogout");
 
-  if (usuarioNome) {
-    // ✅ Mostra o nome do usuário logado
-    linkUsuario.textContent = usuarioNome;
-    linkUsuario.href = "pages/usuario.html";
+   if (usuarioNome) {
+   
+    /*linkUsuario.textContent = usuarioNome;
+    linkUsuario.href = "pages/usuario.html";*/
 
-    // ✅ Esconde o link de login
+    if (usuarioNome == "Administrador"){ 
+      linkUsuario.textContent = usuarioNome;
+        console.log("Bem vindo adm");
+       linkUsuario.href = "pages/adm.html";
+    }else if (tipodeacesso == "Vendedor"){ 
+      linkUsuario.textContent = usuarioNome;
+    console.log("Bem vindo ven");
+      linkUsuario.href = "pages/vendedor.html";
+    } else if (tipodeacesso == "Comprador"){ 
+      linkUsuario.textContent = usuarioNome;
+    console.log("Bem vindo use");
+      linkUsuario.href = "pages/usuario.html";
+    }
+   
     if (linkLogin) linkLogin.style.display = "none";
 
-    // ✅ Mostra o link de sair
+    
     if (linkLogout) linkLogout.style.display = "inline";
 
-    // ✅ Quando clicar em “Sair”
+    
     linkLogout.addEventListener("click", (event) => {
       event.preventDefault(); // evita recarregar a página
       localStorage.removeItem("usuarioLogado");
@@ -72,13 +86,13 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = "index.html"; // redireciona pro login
     });
   } else {
-    // ✅ Usuário não logado
-    linkUsuario.textContent = "Usuário";
+    linkUsuario.textContent = "";
     linkUsuario.href = "index.html";
 
     if (linkLogout) linkLogout.style.display = "none";
   }
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
     carregarUsuario();
