@@ -69,9 +69,7 @@ main {
   align-items: flex-start;
   padding: 40px;
 }
-.veiculos{
-  width: 100%;
-}
+
 
 .container {
   display: flex;
