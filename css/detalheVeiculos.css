@@ -44,7 +44,7 @@ header h1 {
   -webkit-text-fill-color: transparent;
 }
 
-/* Menu */
+
 nav {
   display: flex;
   gap: 20px;
@@ -61,7 +61,7 @@ nav a:hover {
   color: #ff6600;
   transform: translateY(-2px);
 }
-/* ===== MAIN ===== */
+
 main {
   flex: 1;
   display: flex;
@@ -69,8 +69,10 @@ main {
   align-items: flex-start;
   padding: 40px;
 }
+.veiculos{
+  width: 100%;
+}
 
-/* ===== CONTAINER ===== */
 .container {
   display: flex;
   justify-content: center;
@@ -90,7 +92,7 @@ main {
   position: relative;
 }
 
-/* ===== HEADER DO CARD ===== */
+
 .card .header {
   display: inline;
   align-items: center;
