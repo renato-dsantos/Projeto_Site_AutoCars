@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /*linkUsuario.textContent = usuarioNome;
     linkUsuario.href = "pages/usuario.html";*/
 
-    if (usuarioNome == "Administrador") 
+    if (tipodeacesso == "Administrador") 
       linkUsuario.textContent = usuarioNome;
     linkUsuario.href = "pages/adm.html";
 
