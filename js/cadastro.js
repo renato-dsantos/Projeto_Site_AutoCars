@@ -88,7 +88,7 @@ document.getElementById("CEP").addEventListener("blur", function () {
         if (resposta.ok) {
           alert("Usuário cadastrado com sucesso!");
           localStorage.setItem("usuarioLogado", nome);
-          window.location.href = "usuario.html";
+          window.location.href = ".pages/index.html";
         } else {
           alert(" Erro ao cadastrar usuário.");
         }
