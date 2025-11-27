@@ -143,8 +143,8 @@ section h1 {
   flex-direction: column;
   justify-content: space-between;
   transition: 0.3s;
-  width: 210px;
-  height: 280px;
+  /*width: 210px;
+  height: 280px;*/
 }
 
 .card:hover {
