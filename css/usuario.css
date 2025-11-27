@@ -207,3 +207,63 @@ main {
   background-color: #ff3300;
   transform: translateY(-2px);
 }
+
+/**tabela de gerenciar pedido*/
+
+.tabela-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+
+table {
+  width: 100%;
+  flex: 1;
+  border-collapse: collapse;
+  background-color: #111;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #333;
+  text-align: center;
+}
+
+th {
+  background-color: #222;
+  color: #ff6600;
+  text-transform: uppercase;
+}
+
+tr:hover {
+  background-color: #2a2a2a;
+}
+
+
+.btnExcluir,
+.btnExcluirUser,
+.btnExcluirCar,
+.btnEditar {
+  background-color: #ff3300;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 15px;
+  cursor: pointer;
+  font-family: 'Racing Sans One', sans-serif;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btnExcluirUser:hover {
+  background-color: #cc2900;
+  transform: scale(1.05);
+}
+
+.btnExcluirCar:hover {
+  background-color: #cc2900;
+  transform: scale(1.05);
+}
